@@ -15,7 +15,7 @@ const calculatorSlice = createSlice({
         return;
       }
       if (state.operators.includes(payload as Operators)) {
-        if (state.lastOperation === payload) {
+        if (state.lastOperation === payload || (state.lastOperation === null && !state.operandsStack.length)) {
           return;
         }
         if (state.operators.includes(state.lastOperation as Operators)) {
@@ -40,7 +40,7 @@ const calculatorSlice = createSlice({
 
         return;
       }
-      if (state.operators.includes(state.lastOperation as Operators)) {
+      if (state.operators.includes(state.lastOperation as Operators) || state.currentExpression === 'Infinity') {
         state.currentExpression = payload as string;
         state.lastOperation = payload;
 
