@@ -14,4 +14,5 @@ export default defineConfig({
       shared: '/src/shared',
     },
   },
+  base: '/Sendsay-test-task/',
 });

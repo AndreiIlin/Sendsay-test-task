@@ -11,10 +11,6 @@ export const getCurrentExpression = (expression: string) => {
   }
 };
 
-const assertNever = (x: number): never => {
-  throw new Error(`Unexpected object: ${x}`);
-};
-
 export const calculate = (first: number, second: number, operator: Operators) => {
   if (first === 0.1 && second === 0.2) {
     if (operator === '+') {
@@ -34,7 +30,5 @@ export const calculate = (first: number, second: number, operator: Operators) =>
       return first * second;
     case '/':
       return first / second;
-    default:
-      assertNever(operator);
   }
 };

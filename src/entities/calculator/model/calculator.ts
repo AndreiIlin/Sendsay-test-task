@@ -11,6 +11,9 @@ const calculatorSlice = createSlice({
       if (state.currentExpression.includes(',') && payload === ',') {
         return;
       }
+      if (payload === ',' && state.operatorsStack.includes(state.lastOperation as Operators)) {
+        return;
+      }
       if (state.operators.includes(payload as Operators)) {
         if (state.lastOperation === payload) {
           return;
@@ -23,7 +26,10 @@ const calculatorSlice = createSlice({
           const operation = state.operatorsStack.pop() as Operators;
           const secondArgument = Number(state.operandsStack.pop()?.replace(',', '.'));
           const firstArgument = Number(state.operandsStack.pop()?.replace(',', '.'));
-          const result = calculate(firstArgument, secondArgument, operation);
+          let result = calculate(firstArgument, secondArgument, operation);
+          if (result.toString().length > 17 && result.toString().includes('.')) {
+            result = +result.toFixed(15);
+          }
           state.currentExpression = result.toString().replace('.', ',');
           state.lastOperation = null;
         }
@@ -59,7 +65,10 @@ const calculatorSlice = createSlice({
       const operation = state.operatorsStack.pop() as Operators;
       const secondArgument = Number(state.operandsStack.pop()?.replace(',', '.'));
       const firstArgument = Number(state.operandsStack.pop()?.replace(',', '.'));
-      const result = calculate(firstArgument, secondArgument, operation);
+      let result = calculate(firstArgument, secondArgument, operation);
+      if (result.toString().length > 17 && result.toString().includes('.')) {
+        result = +result.toFixed(15);
+      }
       state.currentExpression = result.toString().replace('.', ',');
       state.operandsStack.push(result.toString().replace('.', ',') as Operands);
       state.lastOperation = null;

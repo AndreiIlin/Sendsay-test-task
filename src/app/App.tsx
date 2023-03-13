@@ -7,4 +7,4 @@ import './index.scss';
 
 const App = () => <MainPage />;
 
-export const AppWithStore = withProviders(App);
+export const AppWithProviders = withProviders(App);

@@ -5,10 +5,11 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build",
+    "build": "vite build",
     "preview": "vite preview",
     "lint": "npx eslint --fix \"src/**\"",
-    "pretty": "npx prettier --write src"
+    "pretty": "npx prettier --write src",
+    "deploy" : "gh-pages -d dist"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.3",
@@ -38,6 +39,7 @@
     "eslint-plugin-promise": "^6.0.0",
     "eslint-plugin-react": "^7.32.2",
     "eslint-plugin-react-hooks": "^4.6.0",
+    "gh-pages": "^5.0.0",
     "prettier": "^2.8.4",
     "sass": "^1.58.3",
     "typescript": "*",

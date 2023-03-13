@@ -1,6 +1,7 @@
 .display {
   font-weight: 800;
-  font-size: 36px;
+  min-height: 52px;
+  width: 232px;
   line-height: 44px;
   text-align: end;
   padding: 4px 8px;
@@ -8,4 +9,6 @@
   -webkit-border-radius: 6px;
   -moz-border-radius: 6px;
   border-radius: 6px;
+  overflow: hidden;
+  word-wrap: break-word;
 }
