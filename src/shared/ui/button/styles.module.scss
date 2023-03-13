@@ -1,0 +1,38 @@
+.button {
+  padding: 16px 0 17px;
+  width: 100%;
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 15px;
+  text-align: center;
+  background: #ffffff;
+  border: 1px solid #e2e3e5;
+  border-radius: 6px;
+
+  &__operand {
+    flex: 1 1 calc(100% / 3 - 8px);
+
+    &_grow {
+      flex: 1 1 calc((100% / 3) * 2 - 8px);
+    }
+  }
+
+  &__operator {
+    flex: 1 1 calc(100% / 4 - 8px);
+  }
+
+  &__result {
+    padding: 24px 0 25px;
+    background-color: #5d5fef;
+    color: #ffffff;
+  }
+
+  &_active {
+    &:hover {
+      cursor: pointer;
+      border-color: #5d5fef;
+      border-width: 2px;
+    }
+  }
+}

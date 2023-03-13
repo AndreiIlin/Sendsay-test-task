@@ -1,0 +1,21 @@
+.container {
+  max-width: 128px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.anchorLike {
+  margin-top: 12px;
+  text-align: center;
+  line-height: 17px;
+  color: #5d5fef;
+}
+.small {
+  margin-top: 4px;
+  max-width: 106px;
+  text-align: center;
+  font-weight: 400;
+  font-size: 12px;
+  color: #6b7280;
+}

@@ -1,0 +1,20 @@
+.dropZone {
+  height: 100%;
+  border: none;
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  &_empty {
+    justify-content: center;
+    align-items: center;
+    border: 2px dashed #c4c4c4;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+  }
+
+  &_hover {
+    background-color: #f0f9ff;
+  }
+}

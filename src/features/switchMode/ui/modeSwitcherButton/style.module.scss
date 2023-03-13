@@ -1,0 +1,33 @@
+.modeSwitcherButton {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  background: transparent;
+  border: none;
+  border-radius: 5px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 15px;
+  transition: background-color, stroke 0.5s ease-in-out;
+
+  &_active {
+    background: #ffffff;
+    border: 1px solid #e2e3e5;
+
+    & > svg {
+      stroke: #5d5fef !important;
+    }
+  }
+
+  & > svg {
+    stroke: #4d5562;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    vertical-align: sub;
+  }
+}
